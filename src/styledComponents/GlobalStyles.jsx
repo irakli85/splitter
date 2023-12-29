@@ -36,13 +36,16 @@ const GlobalStyles = createGlobalStyle`
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-bottom: 3rem;     
+    }
+
+    #root{
+      padding-bottom: 3rem;
     }
     
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+      -webkit-appearance: none;
+      margin: 0;
     }
 `;
 
