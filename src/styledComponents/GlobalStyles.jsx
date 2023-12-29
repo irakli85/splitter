@@ -35,7 +35,8 @@ const GlobalStyles = createGlobalStyle`
       background: var(--aviary);
       display: flex;
       justify-content: center;
-      align-items: center;     
+      align-items: center;
+      padding-bottom: 3rem;     
     }
     
     input::-webkit-outer-spin-button,
