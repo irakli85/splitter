@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 
-const SelectTip = ({onTipChange}) => {
+const SelectTip = ({onTipChange, onCustomChange, customTip}) => {
   return (
     <Div>
         <p>Select Tip %</p>
@@ -12,7 +12,7 @@ const SelectTip = ({onTipChange}) => {
             <Button onTipChange={onTipChange} value={15}/>
             <Button onTipChange={onTipChange} value={25}/>
             <Button onTipChange={onTipChange} value={50}/>
-            <TipInput placeholder='Custom'/>
+            <TipInput onChange={onCustomChange} placeholder='Custom' value={customTip}/>
         </BtnDiv>
     </Div>
   )

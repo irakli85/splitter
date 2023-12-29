@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const OutComp = ({text}) => {
+const OutComp = ({text, tip, people, bill}) => {
+    let tipAmount;
+    if(bill > 0 || tip > 0 || people > 0){
+        tipAmount = ((bill*tip)/100)/people
+    }
   return (
     <Container>
         <Div>
             <p>{text}</p>
             <span>/ person</span>
         </Div>
-        <strong>$4.27</strong>
+        <strong>{tipAmount ? `${tipAmount.toFixed(2)}$` : '0$'}</strong>
     </Container>
   )
 }

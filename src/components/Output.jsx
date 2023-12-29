@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import OutComp from './OutComp'
 
-const Output = () => {
+const Output = ({tip, bill, people}) => {
   return (
     <Div>
         <div>
-            <OutComp text='Tip Amount'/>
-            <OutComp text='Total'/>
+            <OutComp tip={tip} bill={bill} people={people} text='Tip Amount'/>
+            <OutComp tip={tip} bill={bill} people={people} text='Total'/>
         </div>
         <button>RESET</button>
     </Div>

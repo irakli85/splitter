@@ -6,19 +6,39 @@ import styled from 'styled-components'
 const Calculator = () => {
     const [bill, setBill] = useState('')
     const [tip, setTip] = useState(0)
+    const [customTip, setCustomTip] = useState('')
+    const [people, setPeople] = useState(1)    
 
     const handleBill = (e) => {
         setBill(+e.target.value)
     }
 
     const handleTip = (e) => {
-        setTip(+e.target.value)        
+        setTip(+e.target.value)
+        setCustomTip('')        
+    }
+
+    const handleCustomTip = (e) => {
+        setCustomTip(+e.target.value)
+        setTip(0)        
+    }
+
+    const handlePeople = (e) => {
+        e.target.value > 0 ? setPeople(+e.target.value) : setPeople('')
     }
 
   return (
     <Main>
-        <Input billValue={bill} onBillChange={handleBill} onTipChange={handleTip}/>
-        <Output/>        
+        <Input 
+            customTip={customTip} 
+            billValue={bill}
+            peopleValue={people} 
+            onBillChange={handleBill} 
+            onTipChange={handleTip} 
+            onCustomChange={handleCustomTip}
+            onPeopleChange={handlePeople}
+        />
+        <Output tip={tip} bill={bill} people={people}/>        
     </Main>
   )
 }

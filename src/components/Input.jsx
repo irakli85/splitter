@@ -5,14 +5,20 @@ import dollar from '/images/dollar.svg'
 import people from '/images/people.svg'
 import styled from 'styled-components'
 
-const Input = ({billValue, onBillChange, onTipChange}) => {
+const Input = ({billValue, onBillChange, onTipChange, onCustomChange, customTip, peopleValue, onPeopleChange}) => {
   return (
     <div>
-        <InpComp label='Bill' borderColor='#26C2AE' img={dollar} billValue={billValue} onBillChange={onBillChange}/>
-        <SelectTip onTipChange={onTipChange}/>
+        <InpComp 
+          label='Bill' 
+          borderColor='#26C2AE' 
+          img={dollar} 
+          billValue={billValue} 
+          onBillChange={onBillChange}
+           />
+        <SelectTip onTipChange={onTipChange} onCustomChange={onCustomChange} customTip={customTip}/>
         <Div>
-            <InpComp label='Number of People' borderColor='#26C2AE' img={people}/>
-            <Span>Can’t be zero</Span>
+            <InpComp label='Number of People' borderColor='#26C2AE' img={people} billValue={peopleValue} onBillChange={onPeopleChange}/>
+            {peopleValue === '' && <Span>Can’t be zero</Span>}
         </Div>
     </div>
   )
