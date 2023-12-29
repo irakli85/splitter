@@ -16,7 +16,11 @@ const Btn = styled.button`
     text-align: center;
     font-size: 2.4rem;
     cursor: pointer;
-    &.selected { background-color: red; }
+    &:hover{
+      background: var(--purple-heart);
+      color: var(--waterloo);
+      transition: all 0.2s ease-in-out;
+    }
 `
 
 export default Button
